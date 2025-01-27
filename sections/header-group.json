@@ -71,6 +71,7 @@
     },
     "custom_liquid_FA9LaA": {
       "type": "custom-liquid",
+      "disabled": true,
       "custom_css": [
         "body {background-color: black;}"
       ],
