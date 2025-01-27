@@ -100,3 +100,28 @@ if (Shopify.designMode) {
   document.addEventListener('shopify:section:load', (event) => initializeScrollAnimationTrigger(event.target, true));
   document.addEventListener('shopify:section:reorder', () => initializeScrollAnimationTrigger(document, true));
 }
+
+
+// phone closer animation
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("animationContainer");
+
+  window.addEventListener("scroll", () => {
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    const triggerTouchPoint = 200; // Scroll position when phones touch
+
+    if (scrollPosition > triggerTouchPoint) {
+      container.classList.add("scrolled");
+    } else {
+      container.classList.remove("scrolled");
+      container.classList.remove("shared"); // Reset sharing effect
+    }
+
+    // Trigger "file sharing" when phones touch
+    if (scrollPosition > triggerTouchPoint + 50) {
+      container.classList.add("shared");
+    }
+  });
+});
+
