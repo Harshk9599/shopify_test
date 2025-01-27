@@ -17,6 +17,15 @@
         "padding_bottom": 28
       }
     },
+    "custom_liquid_eF3V7e": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Phone Sharing Animation</title>\n  <style>\n    body {\n      margin: 0;\n      padding: 0;\n      height: 200vh; /* Make the page scrollable */\n      background: #f0f4f8;\n      font-family: Arial, sans-serif;\n      display: flex;\n      justify-content: center;\n      align-items: flex-start;\n      overflow-x: hidden;\n    }\n\n    .container {\n      position: fixed;\n      top: 30%;\n      left: 50%;\n      transform: translateX(-50%);\n      width: 600px;\n      height: 300px;\n    }\n\n    .phone {\n      width: 100px;\n      height: 200px;\n      background: #333;\n      border-radius: 20px;\n      position: absolute;\n      top: 50%;\n      transform: translateY(-50%);\n      transition: transform 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease;\n    }\n\n    .phone.left {\n      left: 0;\n    }\n\n    .phone.right {\n      right: 0;\n    }\n\n    /* When scrolled enough to touch */\n    .container.scrolled .phone.left {\n      transform: translate(160px, -50%);\n    }\n\n    .container.scrolled .phone.right {\n      transform: translate(-160px, -50%);\n    }\n\n    /* File sharing effect */\n    .container.shared .phone {\n      background: #3393e2;\n      box-shadow: 0 0 15px #3393e2, 0 0 30px #3393e2;\n    }\n\n    .container.shared .phone.left {\n      transform: translate(150px, -50%);\n    }\n\n    .container.shared .phone.right {\n      transform: translate(-150px, -50%);\n    }\n  </style>\n</head>\n<body>\n  <div class=\"container\" id=\"animationContainer\">\n    <div class=\"phone left\"></div>\n    <div class=\"phone right\"></div>\n  </div>\n\n  <script>\n    const container = document.getElementById(\"animationContainer\");\n\n    window.addEventListener(\"scroll\", () => {\n      const scrollPosition = window.scrollY;\n      const triggerTouchPoint = 200; // Scroll position when phones touch\n\n      if (scrollPosition > triggerTouchPoint) {\n        container.classList.add(\"scrolled\");\n      } else {\n        container.classList.remove(\"scrolled\");\n        container.classList.remove(\"shared\"); // Reset sharing effect\n      }\n\n      // Trigger \"file sharing\" when phones touch\n      if (scrollPosition > triggerTouchPoint + 50) {\n        container.classList.add(\"shared\");\n      }\n    });\n  </script>\n</body>\n</html>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "custom_liquid_cpYxJe": {
       "type": "custom-liquid",
       "disabled": true,
@@ -26,20 +35,11 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
-    },
-    "custom_liquid_eF3V7e": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Phone Sharing Animation</title>\n  <style>\n    body {\n      margin: 0;\n      padding: 0;\n      height: 200vh; /* Make the page scrollable */\n      background: #f0f4f8;\n      font-family: Arial, sans-serif;\n      display: flex;\n      justify-content: center;\n      align-items: flex-start;\n      overflow-x: hidden;\n    }\n\n    .container {\n      position: fixed;\n      top: 30%;\n      left: 50%;\n      transform: translateX(-50%);\n      width: 600px;\n      height: 300px;\n    }\n\n    .phone {\n      width: 100px;\n      height: 200px;\n      background: #333;\n      border-radius: 20px;\n      position: absolute;\n      top: 50%;\n      transform: translateY(-50%);\n      transition: transform 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease;\n    }\n\n    .phone.left {\n      left: 0;\n    }\n\n    .phone.right {\n      right: 0;\n    }\n\n    /* When scrolled enough to touch */\n    .container.scrolled .phone.left {\n      transform: translate(160px, -50%);\n    }\n\n    .container.scrolled .phone.right {\n      transform: translate(-160px, -50%);\n    }\n\n    /* File sharing effect */\n    .container.shared .phone {\n      background: #3393e2;\n      box-shadow: 0 0 15px #3393e2, 0 0 30px #3393e2;\n    }\n\n    .container.shared .phone.left {\n      transform: translate(150px, -50%);\n    }\n\n    .container.shared .phone.right {\n      transform: translate(-150px, -50%);\n    }\n  </style>\n</head>\n<body>\n  <div class=\"container\" id=\"animationContainer\">\n    <div class=\"phone left\"></div>\n    <div class=\"phone right\"></div>\n  </div>\n\n  <script>\n    const container = document.getElementById(\"animationContainer\");\n\n    window.addEventListener(\"scroll\", () => {\n      const scrollPosition = window.scrollY;\n      const triggerTouchPoint = 200; // Scroll position when phones touch\n\n      if (scrollPosition > triggerTouchPoint) {\n        container.classList.add(\"scrolled\");\n      } else {\n        container.classList.remove(\"scrolled\");\n        container.classList.remove(\"shared\"); // Reset sharing effect\n      }\n\n      // Trigger \"file sharing\" when phones touch\n      if (scrollPosition > triggerTouchPoint + 50) {\n        container.classList.add(\"shared\");\n      }\n    });\n  </script>\n</body>\n</html>",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
     "main",
-    "custom_liquid_cpYxJe",
-    "custom_liquid_eF3V7e"
+    "custom_liquid_eF3V7e",
+    "custom_liquid_cpYxJe"
   ]
 }
